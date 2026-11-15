@@ -19,4 +19,6 @@ def main(directory, yes):
             delete = click.confirm(f"Delete \"{path}\"? (same as \"{hashes[file_hash]}\")", default=False) if not yes else True
             if delete:
                 path.unlink(missing_ok=True)
+            else:
+                click.echo(f"Skipped \"{path}\"")
         hashes[file_hash] = path

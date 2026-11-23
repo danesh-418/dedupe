@@ -24,5 +24,5 @@ def main(directory, yes, listd):
                 else:
                     click.echo(f"Skipped \"{path}\"")
             else:
-                click.echo(f"\"{path}\"=\"{hashes[file_hash]}\"")
+                click.echo(f"{path}={hashes[file_hash]}")
         hashes[file_hash] = path
